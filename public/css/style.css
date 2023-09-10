@@ -1,0 +1,167 @@
+*{
+    padding :0 ;
+    margin:0 ;
+    box-sizing: border-box;
+}
+
+:root {
+    --main--bg-color: #eff5fe ;
+    --border-color:#0288d147 ;
+    --container-width :500px ;
+}
+
+html,body {
+        height: 100%;
+        width: 100%;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        background-color: var(--main--bg-color);
+
+}
+
+body,.drop-zone,.upload-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.upload-container {
+    background-color: #ffffff;
+    border-radius: 25px;
+    box-shadow: 0px 20px 20px #0000002e;
+
+}
+
+.drop-zone {
+    min-height: 200px;
+    width:  var(--container-width);
+    border: 2px dashed var(--border-color) ;
+    border-radius: 10px;
+    margin:30px ;
+}
+
+.dragged.drop-zone {
+    background: var(--main--bg-color);
+    border-color: blue;
+}
+
+.icon-container {
+    position: relative;
+    height: 100px;
+    width: 75px;
+}
+
+.icon-container img {
+    width: 75px;
+    position: absolute;
+    transition: transform 250ms ease-in-out;
+}
+
+.icon-container .center {
+    z-index: 2;
+}
+
+.dragged .icon-container .right {
+    transform:translateX(65px) scale(0.8);
+    filter: hue-rotate(90deg);
+
+}
+.dragged .icon-container .left {
+    transform:translateX(-65px) scale(0.8);
+    filter: hue-rotate(200deg);
+    
+}
+
+#fileInput{
+    display: none;
+
+}
+
+.browseBtn {
+    color:blue ;
+    cursor: pointer;
+}
+
+.progressContainer {
+    width: var(--container-width);
+    height: 70px;
+    border: 2px solid var(--main--bg-color);
+    margin-bottom: 25px;
+    border-radius: 10px;
+    position: relative;
+    display: none;
+}
+
+.progressContainer .bgProgress {
+    background-color: var(--main--bg-color);
+    width: 0%;
+    height: 100%;
+    transform: scaleX(0);
+    /* transform-origin: left; */
+    border-radius: 3;
+    transition: width .25s linear ;
+    position: absolute;
+
+}
+
+.progressContainer .inner-container {
+    position: absolute;
+    z-index: 1;
+    width: calc(100%-30px);
+    margin: 10px 15px;
+}
+
+.percent-container {
+    font-size: 13px;
+    margin: 5px ;
+    opacity: 0.8; 
+
+}
+
+.progress-bar {
+        height: 3px;
+        width: 100%;
+        background-color: blue;
+        transform-origin: left;
+        transform: scaleX(0);
+        transition: width .25s linear ;
+        border-radius: 2px;
+}
+
+.sharing-container{
+    width: var(--container-width);
+    margin-bottom: 10px;
+    display: none;
+    /* display: block; */
+    
+}
+.sharing-container p {
+    text-align: center;
+  }
+  
+
+.input-container{
+    position: relative;
+}
+
+.sharing-container .input-container input{
+    width:var(--container-width);
+    border: 2px dashed var(--border-color);
+    border-radius: 3px;
+    padding: 10px 15 px;
+    font-size: 18px;
+    background-color:#f5fcff ;
+    color:#0000008c  ;
+
+
+}
+
+.sharing-container img{
+    position: absolute;
+    height:20px ;
+    width: 20px;
+    right: 4px;
+    top: 3px;
+    background-color: #f7fdff;
+    cursor: pointer;
+}

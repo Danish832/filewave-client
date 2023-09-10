@@ -7,7 +7,7 @@ const percentDiv = document.querySelector("#percent");
 const progressBar = document.querySelector(".progress-bar");
 const progressContainer = document.querySelector(".progressContainer");
 const sharingContainer = document.querySelector(".sharing-container");
-const copyBtn = document.querySelector("#copyURLbtn");
+// const copyBtn = document.querySelector("#copyURLbtn");
 
 const fileURL = document.querySelector("#fileURL");
 
@@ -46,14 +46,14 @@ browseBtn.addEventListener("click",()=>{
     fileInput.click();
 })
 
-copyBtn.addEventListener("click",()=>{
+// copyBtn.addEventListener("click",()=>{
 
-    let copyText = fileURL.textContent ;
+//     let copyText = fileURL.textContent ;
 
-        navigator.clipboard.writeText(copyText);  
+//         navigator.clipboard.writeText(copyText);  
 
-    fileURL.value = "Text Copied..." ;
-})
+//     fileURL.value = "Text Copied..." ;
+// })
 
 
 
